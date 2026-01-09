@@ -1,0 +1,1 @@
+export { CoverBlock } from "./CoverBlock";
