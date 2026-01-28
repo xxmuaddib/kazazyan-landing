@@ -40,6 +40,18 @@ export const Header = ({ lang, setLang }) => {
     localStorage.setItem("lang", lang);
   };
 
+  React.useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <Self>
       <FixedContainer>
@@ -55,6 +67,9 @@ export const Header = ({ lang, setLang }) => {
             <NavItem to="/#news">{lang === "ru" ? "Новости" : "News"}</NavItem>
             <NavItem to="/gallery">
               {lang === "ru" ? "Галерея" : "Gallery"}
+            </NavItem>
+            <NavItem to="/press-kit">
+              {lang === "ru" ? "Пресс кит" : "Press Kit"}
             </NavItem>
             <NavItem to="/#contacts">
               {lang === "ru" ? "Контакты" : "Contacts"}
@@ -116,6 +131,12 @@ export const Header = ({ lang, setLang }) => {
                   >
                     {lang === "ru" ? "Галерея" : "Gallery"}
                   </MobileNavItem>
+                  <MobileNavItem
+                    to="/press-kit"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {lang === "ru" ? "Пресс Кит" : "Press Kit"}
+                  </MobileNavItem>
 
                   <MobileNavItem
                     to="/#contacts"
@@ -174,7 +195,7 @@ export const Header = ({ lang, setLang }) => {
                       </MobileNavItem>
                     )}
                   </MobileNavItemsRow>
-                  <LanguageSwitcher>
+                  {/* <LanguageSwitcher>
                     <LangItem
                       $isActive={lang === "en"}
                       onClick={() => handleSetLang("en")}
@@ -187,7 +208,7 @@ export const Header = ({ lang, setLang }) => {
                     >
                       RUS
                     </LangItem>
-                  </LanguageSwitcher>
+                  </LanguageSwitcher> */}
                 </MobileMenuTopPart>
               </MobileNavList>
             </MobileMenu>

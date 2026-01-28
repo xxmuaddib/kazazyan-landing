@@ -5,16 +5,11 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Header } from "../components/Header";
 import { GlobalStyles } from "../common/GlobalStyles";
 import styled from "styled-components";
-import { AboutUsBlock } from "../components/AboutUsBlock";
-import { CoverBlock } from "../components/CoverBlock";
-import { NewsBlock } from "../components/NewsBlock";
 import { Footer } from "../components/Footer";
 import CoverImage from "../images/cover-image.jpg";
-// import { AwardsBlock } from "../components/AwardsBlock";
-import { GalleryBlock } from "../components/GalleryBlock";
 import { PressKitBlock } from "../components/PressKitBlock";
 
-const IndexPage = () => {
+const PressKitPage = () => {
   const [isCallBackModalOpen, setIsCallBackModalOpen] = React.useState(false);
   const [lang, setLang] = React.useState("en");
   React.useEffect(() => {
@@ -100,33 +95,13 @@ const IndexPage = () => {
         lang={lang}
         setLang={setLang}
       />
+
       <OuterContainer>
         <InnerContainer>
-          <CoverBlock lang={lang} />
+          <PressKitBlock lang={lang} />
         </InnerContainer>
       </OuterContainer>
-      <CoverImageBackground />
-      <WhiteOuterContainer>
-        <InnerContainer>
-          <AboutUsBlock lang={lang} isHomePage />
-        </InnerContainer>
-      </WhiteOuterContainer>
-      <OuterContainer>
-        <InnerContainer>
-          <NewsBlock lang={lang} />
-        </InnerContainer>
-      </OuterContainer>
-      {/* <WhiteOuterContainer>
-        <InnerContainer>
-          <AwardsBlock lang={lang} />
-        </InnerContainer>
-      </WhiteOuterContainer> */}
-      <OuterContainer>
-        <InnerContainer>
-          <GalleryBlock lang={lang} isHomePage />
-        </InnerContainer>
-      </OuterContainer>
-      
+
       <BlackOuterContainer>
         <InnerContainer>
           <Footer lang={lang} />
@@ -136,7 +111,8 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default PressKitPage;
+
 
 const OuterContainer = styled.div`
   width: 100%;
@@ -147,10 +123,6 @@ const OuterContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-`;
-
-const WhiteOuterContainer = styled(OuterContainer)`
-  background-color: #fff;
 `;
 
 const BlackOuterContainer = styled(OuterContainer)`
@@ -171,15 +143,11 @@ const InnerContainer = styled.div`
 `;
 
 const CoverImageBackground = styled.div`
-display: none;
   width: 100%;
   height: 360px;
   background-image: url(${CoverImage});
   background-size: cover;
   background-position: center;
-  @media (min-width: 768px) {
-    display: block;
-  }
   @media (min-width: 1024px) {
     height: 640px;
   }

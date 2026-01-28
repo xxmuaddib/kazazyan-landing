@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
+import CoverImage from "../../images/cover-image.jpg";
 
 export const CoverBlock = ({ lang }) => {
   const pageData = useStaticQuery(graphql`
@@ -37,9 +38,11 @@ export const CoverBlock = ({ lang }) => {
           ? pageDataText.titleRu?.titleRu
           : pageDataText.title?.title}
       </CoverTitle>
+      <CoverImageBackground />
       <CoverText>
         {lang === "ru" ? pageDataText.textRu?.textRu : pageDataText.text?.text}
       </CoverText>
+
     </Container>
   );
 };
@@ -95,5 +98,22 @@ const CoverText = styled.h3`
   @media (min-width: 1024px) {
     width: 906px;
     margin-bottom: 80px;
+  }
+`;
+
+
+
+const CoverImageBackground = styled.div`
+  display: block;
+  width: 100%;
+  height: 360px;
+  background-image: url(${CoverImage});
+  background-size: cover;
+  background-position: center;
+  @media (min-width: 768px) {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    height: 640px;
   }
 `;

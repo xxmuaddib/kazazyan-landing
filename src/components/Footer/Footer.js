@@ -71,7 +71,7 @@ export const Footer = ({ lang }) => {
                 </a>
               </FooterLinksItem>
             </div>
-            {/* <FooterContactRow>
+            <FooterContactRow>
               <FooterLinksTitle>Follow Haik</FooterLinksTitle>
               <SocialMediaItems>
                 {pageDataContact.socialMediaLink1 && (
@@ -125,7 +125,7 @@ export const Footer = ({ lang }) => {
                   </FooterLinksItem>
                 )}
               </SocialMediaItems>
-            </FooterContactRow> */}
+            </FooterContactRow>
           </FooterLinksRow>
         </FooterMainCol>
       </FooterMainRow>
