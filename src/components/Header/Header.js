@@ -240,7 +240,7 @@ const FixedContainer = styled.div`
   align-items: center;
   background-color: #222222;
   box-shadow: 0px 1px 1px 0px #0000001a;
-  height: 78px;
+  height: 80px;
   padding: 0 16px;
   @media (min-width: 1024px) {
     height: 72px;

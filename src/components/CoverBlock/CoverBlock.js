@@ -33,12 +33,12 @@ export const CoverBlock = ({ lang }) => {
   return (
     <Container>
       <AnchorDiv id="home" />
+      <CoverImageBackground />
       <CoverTitle>
         {lang === "ru"
           ? pageDataText.titleRu?.titleRu
           : pageDataText.title?.title}
       </CoverTitle>
-      <CoverImageBackground />
       <CoverText>
         {lang === "ru" ? pageDataText.textRu?.textRu : pageDataText.text?.text}
       </CoverText>

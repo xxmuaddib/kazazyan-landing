@@ -53,6 +53,9 @@ export const Footer = ({ lang }) => {
           <FooterNavItem to="gallery">
             {lang === "ru" ? "Gallery" : "Gallery"}
           </FooterNavItem>
+          <FooterNavItem to="press-kit">
+            {lang === "ru" ? "Press Kit" : "Press Kit"}
+          </FooterNavItem>
           <FooterNavItem to="/#contacts">
             {lang === "ru" ? "Контакты" : "Contacts"}
           </FooterNavItem>
@@ -63,7 +66,16 @@ export const Footer = ({ lang }) => {
           <FooterLinksRow>
             <div>
               <FooterLinksTitle>
-                {lang === "ru" ? "Связаться" : "Contact"}
+                <p>
+                Management 
+                </p>
+                <p>
+                classic & couture
+                </p>
+                <p>
+                Stephanie Henle
+                </p>
+
               </FooterLinksTitle>
               <FooterLinksItem>
                 <a href={`mailto:${pageDataContact.email}`}>
