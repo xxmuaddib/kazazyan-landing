@@ -25,54 +25,6 @@ exports.createSchemaCustomization = ({ actions }) => {
         socialMediaLink6: String
         socialMediaTitle6: String
       }
-
-      type ContentfulNews implements Node {
-        id: ID!
-        title: ContentfulNewsTitle
-        titleRu: ContentfulNewsTitleRu
-        text: ContentfulNewsText
-        textRu: ContentfulNewsTextRu
-        image: ContentfulNewsImage
-        date: Date
-        createdAt: Date
-        updatedAt: Date
-      }
-
-      type ContentfulNewsTitle {
-        title: String
-      }
-
-      type ContentfulNewsTitleRu {
-        titleRu: String
-      }
-
-      type ContentfulNewsText {
-        text: String
-      }
-
-      type ContentfulNewsTextRu {
-        textRu: String
-      }
-
-      type ContentfulNewsImage {
-        url: String
-      }
-
-      type ContentfulNewsBlock implements Node {
-        id: ID!
-        title: ContentfulNewsBlockTitle
-        titleRu: ContentfulNewsBlockTitleRu
-        createdAt: Date
-        updatedAt: Date
-      }
-
-      type ContentfulNewsBlockTitle {
-        title: String
-      }
-
-      type ContentfulNewsBlockTitleRu {
-        titleRu: String
-      }
     `);
 };
 

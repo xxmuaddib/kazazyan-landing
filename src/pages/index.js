@@ -7,7 +7,6 @@ import { GlobalStyles } from "../common/GlobalStyles";
 import styled from "styled-components";
 import { AboutUsBlock } from "../components/AboutUsBlock";
 import { CoverBlock } from "../components/CoverBlock";
-import { NewsBlock } from "../components/NewsBlock";
 import { Footer } from "../components/Footer";
 import CoverImage from "../images/cover-image.jpg";
 // import { AwardsBlock } from "../components/AwardsBlock";
@@ -111,11 +110,11 @@ const IndexPage = () => {
           <AboutUsBlock lang={lang} isHomePage />
         </InnerContainer>
       </WhiteOuterContainer>
-      <OuterContainer>
+      {/* <OuterContainer>
         <InnerContainer>
           <NewsBlock lang={lang} />
         </InnerContainer>
-      </OuterContainer>
+      </OuterContainer> */}
       {/* <WhiteOuterContainer>
         <InnerContainer>
           <AwardsBlock lang={lang} />
