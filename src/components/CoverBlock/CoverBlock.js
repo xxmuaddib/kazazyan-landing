@@ -21,6 +21,12 @@ export const CoverBlock = ({ lang }) => {
           textRu {
             textRu
           }
+          subtitle {
+            subtitle
+          }
+          subtitleRu {
+            subtitleRu
+          }
           createdAt
           updatedAt
         }
@@ -39,10 +45,14 @@ export const CoverBlock = ({ lang }) => {
           ? pageDataText.titleRu?.titleRu
           : pageDataText.title?.title}
       </CoverTitle>
+      <CoverSubtitle>
+        {lang === "ru"
+          ? pageDataText.subtitleRu?.subtitleRu
+          : pageDataText.subtitle?.subtitle}
+      </CoverSubtitle>
       <CoverText>
         {lang === "ru" ? pageDataText.textRu?.textRu : pageDataText.text?.text}
       </CoverText>
-
     </Container>
   );
 };
@@ -82,6 +92,15 @@ const CoverTitle = styled.h1`
   }
 `;
 
+const CoverSubtitle = styled.h2`
+  font-family: Bricolage Grotesque;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 28px;
+  text-align: center;
+  line-height: 140%;
+`;
+
 const CoverText = styled.h3`
   font-family: Bricolage Grotesque;
   font-weight: 500;
@@ -100,8 +119,6 @@ const CoverText = styled.h3`
     margin-bottom: 80px;
   }
 `;
-
-
 
 const CoverImageBackground = styled.div`
   display: block;

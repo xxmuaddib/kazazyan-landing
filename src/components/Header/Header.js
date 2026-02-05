@@ -42,13 +42,13 @@ export const Header = ({ lang, setLang }) => {
 
   React.useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
-  
+
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -240,10 +240,10 @@ const FixedContainer = styled.div`
   align-items: center;
   background-color: #222222;
   box-shadow: 0px 1px 1px 0px #0000001a;
-  height: 80px;
+  height: 92px;
   padding: 0 16px;
   @media (min-width: 1024px) {
-    height: 72px;
+    height: 92px;
     padding: 0;
   }
 `;

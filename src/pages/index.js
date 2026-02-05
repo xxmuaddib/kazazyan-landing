@@ -11,7 +11,6 @@ import { Footer } from "../components/Footer";
 import CoverImage from "../images/cover-image.jpg";
 // import { AwardsBlock } from "../components/AwardsBlock";
 import { GalleryBlock } from "../components/GalleryBlock";
-import { PressKitBlock } from "../components/PressKitBlock";
 
 const IndexPage = () => {
   const [isCallBackModalOpen, setIsCallBackModalOpen] = React.useState(false);
@@ -99,12 +98,12 @@ const IndexPage = () => {
         lang={lang}
         setLang={setLang}
       />
+      <CoverImageBackground />
       <OuterContainer>
         <InnerContainer>
           <CoverBlock lang={lang} />
         </InnerContainer>
       </OuterContainer>
-      <CoverImageBackground />
       <WhiteOuterContainer>
         <InnerContainer>
           <AboutUsBlock lang={lang} isHomePage />
@@ -125,7 +124,7 @@ const IndexPage = () => {
           <GalleryBlock lang={lang} isHomePage />
         </InnerContainer>
       </OuterContainer>
-      
+
       <BlackOuterContainer>
         <InnerContainer>
           <Footer lang={lang} />
@@ -170,7 +169,7 @@ const InnerContainer = styled.div`
 `;
 
 const CoverImageBackground = styled.div`
-display: none;
+  display: none;
   width: 100%;
   height: 360px;
   background-image: url(${CoverImage});
