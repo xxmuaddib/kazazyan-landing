@@ -48,7 +48,7 @@ export const NewsBlock = ({ lang, isHomePage }) => {
   const pageDataText = pageData.allContentfulNewsBlock.nodes?.[0] || {};
   const newsData =
     pageData.allContentfulNews.nodes.sort((a, b) =>
-      dayjs(a.date).diff(dayjs(b.date))
+      dayjs(a.date).diff(dayjs(b.date)),
     ) || [];
 
   // Hide the entire block if there's no news
@@ -72,9 +72,12 @@ export const NewsBlock = ({ lang, isHomePage }) => {
                 <NewsListingItemImage src={item.image?.url} />
               </NewsListingItemImageContainer>
               <NewsListingItemContent>
-                <NewsListingItemTitle>
-                  {lang === "ru" ? item.titleRu?.titleRu : item.title?.title}
-                </NewsListingItemTitle>
+                <NewsListingItemTitle
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      lang === "ru" ? item.titleRu?.titleRu : item.title?.title,
+                  }}
+                ></NewsListingItemTitle>
                 <ViewMoreButton href={`/news/${item.id}`}>
                   {lang === "ru" ? "Подробнее" : "View More"}
                 </ViewMoreButton>
