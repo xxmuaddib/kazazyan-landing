@@ -9,7 +9,7 @@ import { AboutUsBlock } from "../components/AboutUsBlock";
 import { CoverBlock } from "../components/CoverBlock";
 import { Footer } from "../components/Footer";
 import CoverImage from "../images/cover-image.jpg";
-// import { AwardsBlock } from "../components/AwardsBlock";
+import { NewsBlock } from "../components/NewsBlock";
 import { GalleryBlock } from "../components/GalleryBlock";
 
 const IndexPage = () => {
@@ -109,11 +109,11 @@ const IndexPage = () => {
           <AboutUsBlock lang={lang} isHomePage />
         </InnerContainer>
       </WhiteOuterContainer>
-      {/* <OuterContainer>
+      <OuterContainer>
         <InnerContainer>
           <NewsBlock lang={lang} />
         </InnerContainer>
-      </OuterContainer> */}
+      </OuterContainer>
       {/* <WhiteOuterContainer>
         <InnerContainer>
           <AwardsBlock lang={lang} />
