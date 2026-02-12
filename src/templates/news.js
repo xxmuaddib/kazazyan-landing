@@ -168,7 +168,7 @@ const NewsDate = styled.div`
 const NewsTitle = styled.h1`
   font-family: Bricolage Grotesque;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 22px;
   line-height: 130%;
   margin: 0;
   @media (min-width: 1024px) {
