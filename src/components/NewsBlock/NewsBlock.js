@@ -77,7 +77,7 @@ export const NewsBlock = ({ lang, isHomePage }) => {
                     __html:
                       lang === "ru" ? item.titleRu?.titleRu : item.title?.title,
                   }}
-                ></NewsListingItemTitle>
+                />
                 <ViewMoreButton href={`/news/${item.id}`}>
                   {lang === "ru" ? "Подробнее" : "View More"}
                 </ViewMoreButton>
