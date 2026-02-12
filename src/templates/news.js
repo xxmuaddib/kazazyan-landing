@@ -54,7 +54,7 @@ const NewsPage = ({ data }) => {
               <NewsDate>
                 {dayjs(news.date, "DD.MM.YYYY").format("MMMM D, YYYY")}
               </NewsDate>
-              <NewsTitle>{title}</NewsTitle>
+              <NewsTitle dangerouslySetInnerHTML={{ __html: title }} />
             </NewsHeader>
             {news.image?.url && <NewsImage src={news.image.url} alt={title} />}
             <NewsText dangerouslySetInnerHTML={{ __html: text }} />
