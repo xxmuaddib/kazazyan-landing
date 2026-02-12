@@ -49,13 +49,12 @@ const NewsPage = ({ data }) => {
               {lang === "ru" ? "← Назад к новостям" : "← Back to News"}
             </BackLink>
             <NewsHeader>
-              <NewsDate>
-                Published on{" "}
+              <NewsTitle>
                 {dayjs(news.date, "DD.MM.YYYY").format("MMMM D, YYYY")}
-              </NewsDate>
-              <NewsTitle dangerouslySetInnerHTML={{ __html: title }} />
+              </NewsTitle>
             </NewsHeader>
             {news.image?.url && <NewsImage src={news.image.url} alt={title} />}
+            <NewsTitle dangerouslySetInnerHTML={{ __html: title }} />
             <NewsText dangerouslySetInnerHTML={{ __html: text }} />
           </NewsContainer>
         </InnerContainer>

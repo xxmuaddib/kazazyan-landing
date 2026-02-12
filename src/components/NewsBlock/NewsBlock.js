@@ -3,6 +3,10 @@ import styled from "styled-components";
 import dayjs from "dayjs";
 import { useStaticQuery, graphql } from "gatsby";
 
+import customParseFormat from "dayjs/plugin/customParseFormat";
+
+dayjs.extend(customParseFormat);
+
 export const NewsBlock = ({ lang, isHomePage }) => {
   const pageData = useStaticQuery(graphql`
     query AllContentfulNewsBlock {
@@ -72,6 +76,9 @@ export const NewsBlock = ({ lang, isHomePage }) => {
                 <NewsListingItemImage src={item.image?.url} />
               </NewsListingItemImageContainer>
               <NewsListingItemContent>
+                <NewsListingItemDate>
+                  {dayjs(item.date, "DD.MM.YYYY").format("MMMM D, YYYY")}
+                </NewsListingItemDate>
                 <NewsListingItemTitle
                   dangerouslySetInnerHTML={{
                     __html:
@@ -165,6 +172,16 @@ const NewsListingItem = styled.div`
 
 const NewsListingItemContent = styled.div`
   width: 100%;
+`;
+
+const NewsListingItemDate = styled.div`
+  font-family: Bricolage Grotesque;
+  font-weight: 500;
+  font-size: 20px;
+
+  line-height: 130%;
+  margin-bottom: 16px;
+  margin-top: 16px;
 `;
 
 const NewsListingItemTitle = styled.div`
