@@ -50,9 +50,14 @@ export const CoverBlock = ({ lang }) => {
           ? pageDataText.subtitleRu?.subtitleRu
           : pageDataText.subtitle?.subtitle}
       </CoverSubtitle>
-      <CoverText>
-        {lang === "ru" ? pageDataText.textRu?.textRu : pageDataText.text?.text}
-      </CoverText>
+      <CoverText
+        dangerouslySetInnerHTML={{
+          __html:
+            lang === "ru"
+              ? pageDataText.textRu?.textRu
+              : pageDataText.text?.text,
+        }}
+      ></CoverText>
     </Container>
   );
 };
@@ -111,6 +116,7 @@ const CoverText = styled.h3`
 
   color: #000;
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: space-between;
   padding: 0 16px;
