@@ -52,6 +52,7 @@ const NewsPage = ({ data }) => {
             </BackLink>
             <NewsHeader>
               <NewsDate>
+                Published on{" "}
                 {dayjs(news.date, "DD.MM.YYYY").format("MMMM D, YYYY")}
               </NewsDate>
               <NewsTitle dangerouslySetInnerHTML={{ __html: title }} />
