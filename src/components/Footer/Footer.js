@@ -11,6 +11,7 @@ export const Footer = ({ lang }) => {
       allContentfulContactData {
         nodes {
           email
+          managementWebsite
           socialMediaLink1
           socialMediaIcon1 {
             url
@@ -82,6 +83,13 @@ export const Footer = ({ lang }) => {
                   {pageDataContact.email}
                 </a>
               </FooterLinksItem>
+              {pageDataContact.managementWebsite && (
+                <FooterLinksItem>
+                  <a href={pageDataContact.managementWebsite} target="_blank" rel="noreferrer">
+                    {pageDataContact.managementWebsite}
+                  </a>
+                </FooterLinksItem>
+              )}
             </div>
             <FooterContactRow>
               <FooterLinksTitle>Follow Haik</FooterLinksTitle>

@@ -12,6 +12,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         partnerPhone: String
         email: String
         partnerEmail: String
+        managementWebsite: String
         socialMediaLink1: String
         socialMediaTitle1: String
         socialMediaLink2: String
