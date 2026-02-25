@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 export const Footer = ({ lang }) => {
   const pageData = useStaticQuery(graphql`
-    query AllContentfulContactData {
+    query FooterContentfulContactData {
       allContentfulContactData {
         nodes {
           email
@@ -84,7 +84,7 @@ export const Footer = ({ lang }) => {
                 </a>
               </FooterLinksItem>
               {pageDataContact.managementWebsite && (
-                <FooterLinksItem>
+                <FooterLinksItem style={{ marginTop: "16px" }}>
                   <a href={pageDataContact.managementWebsite} target="_blank" rel="noreferrer">
                     {pageDataContact.managementWebsite}
                   </a>
