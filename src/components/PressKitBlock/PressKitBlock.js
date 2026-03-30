@@ -20,6 +20,7 @@ export const PressKitBlock = ({ lang }) => {
           textRu {
             textRu
           }
+          link
           createdAt
           updatedAt
         }
@@ -45,6 +46,11 @@ export const PressKitBlock = ({ lang }) => {
               : pageDataText.text?.text,
         }}
       ></CoverText>
+      {pageDataText.link && (
+        <DownloadButton href={pageDataText.link} target="_blank" rel="noopener noreferrer">
+          Download
+        </DownloadButton>
+      )}
     </Container>
   );
 };
@@ -81,6 +87,23 @@ const CoverTitle = styled.h1`
     margin-top: 80px;
     margin-bottom: 26px;
     text-align: center;
+  }
+`;
+
+const DownloadButton = styled.a`
+  display: inline-block;
+  margin-bottom: 80px;
+  padding: 14px 40px;
+  background-color: #222222;
+  color: #f3f3f3;
+  font-family: Bricolage Grotesque;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #444444;
   }
 `;
 

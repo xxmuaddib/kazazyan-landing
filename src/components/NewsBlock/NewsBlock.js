@@ -51,8 +51,8 @@ export const NewsBlock = ({ lang, isHomePage }) => {
 
   const pageDataText = pageData.allContentfulNewsBlock.nodes?.[0] || {};
   const newsData =
-    pageData.allContentfulNews.nodes.sort((a, b) =>
-      dayjs(a.date).diff(dayjs(b.date)),
+    [...pageData.allContentfulNews.nodes].sort((a, b) =>
+      dayjs(a.date, "DD.MM.YYYY").diff(dayjs(b.date, "DD.MM.YYYY")),
     ) || [];
 
   // Hide the entire block if there's no news
