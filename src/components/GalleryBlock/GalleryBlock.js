@@ -34,11 +34,23 @@ export const GalleryBlock = ({ lang, isHomePage }) => {
     }
   `);
 
+  // allContentfulGalleryLink {
+  //   nodes {
+  //     id
+  //     title
+  //     link
+  //     order
+  //   }
+  // }
+
   const pageDataText = pageData.allContentfulGalleryBlock.nodes?.[0] || {};
   const galleryData =
     pageData.allContentfulGallery.nodes
       .sort((a, b) => a.order - b.order)
-      .filter((item, index) => (isHomePage ? index < 5 : true)) || [];
+      .filter((item, index) => (isHomePage ? index < 6 : true)) || [];
+  // const galleryLinks = pageData.allContentfulGalleryLink.nodes
+  //   .slice()
+  //   .sort((a, b) => a.order - b.order);
 
   return (
     <GalleryBlockContainer>
@@ -51,9 +63,19 @@ export const GalleryBlock = ({ lang, isHomePage }) => {
         </GalleryBlockTextTitle>
         <GalleryListingBlock>
           {galleryData.map((item, index) => (
-            <StyledImg src={item.image.url} />
+            item.image?.url && <StyledImg src={item.image.url} />
           ))}
         </GalleryListingBlock>
+        {/* !isHomePage && galleryLinks.length > 0 && (
+          <GalleryLinksContainer>
+            <GalleryLinksTitle>Videos and Media</GalleryLinksTitle>
+            {galleryLinks.map((item) => (
+              <GalleryLink key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">
+                {item.title}
+              </GalleryLink>
+            ))}
+          </GalleryLinksContainer>
+        ) */}
       </GalleryBlockInnerContainer>
       {isHomePage && (
         <ViewMoreContainer to="gallery">View more</ViewMoreContainer>
@@ -125,6 +147,34 @@ const StyledImg = styled.img`
   @media (min-width: 768px) {
     height: 195px;
     width: auto;
+  }
+`;
+
+const GalleryLinksTitle = styled.h3`
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  margin-top: 0;
+  margin-bottom: 10px;
+  @media (min-width: 1024px) {
+    font-size: 32px;
+  }
+`;
+
+const GalleryLinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+`;
+
+const GalleryLink = styled.a`
+  color: #222222;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 130%;
+  &:hover {
+    opacity: 0.7;
   }
 `;
 
