@@ -52,7 +52,7 @@ export const NewsBlock = ({ lang, isHomePage }) => {
   const pageDataText = pageData.allContentfulNewsBlock.nodes?.[0] || {};
   const newsData =
     [...pageData.allContentfulNews.nodes].sort((a, b) =>
-      dayjs(a.date, "DD.MM.YYYY").diff(dayjs(b.date, "DD.MM.YYYY")),
+      dayjs(b.date, "DD.MM.YYYY").diff(dayjs(a.date, "DD.MM.YYYY")),
     ) || [];
 
   // Hide the entire block if there's no news
@@ -157,7 +157,7 @@ const NewsListingBlock = styled.div`
 const NewsListingItem = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-bottom: 1px solid #2e2e2e;
   padding-top: 32px;
   padding-bottom: 32px;
